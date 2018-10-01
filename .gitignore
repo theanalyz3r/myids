@@ -1,0 +1,14 @@
+/node_modules
+/public/hot
+/public/fonts
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.env
+/server-certs
+laravel-echo-server.json
+notes.md

@@ -1,0 +1,39 @@
+var marquee = function(container,distance,time) {
+
+	var self = this;
+	var target = container.children(':first-child')
+	var contents = target;
+
+	var contentsWidth = 0;
+////		target + $('li').each(function(){
+			$('#marquee ul li').each(function(){
+			contentsWidth+=$(this).width();
+//			console.log($(this).text);
+//			console.log("contents: "+$(this).width());			
+		});
+
+	var containerWidth = container.width();
+//	console.log("containerWidth: "+containerWidth);
+//	console.log("contentsWidth: "+contentsWidth);
+	var shiftLeft = 0;
+	var second = contents.html();
+	contents.append(second);
+	
+	var setup = function() {
+		lineHeight = container.height()
+		$('#marquee').css('line-height' , lineHeight +'px')
+		update();
+	};
+
+	var update = function() {
+	     shiftLeft -= distance;
+     if (shiftLeft < -contentsWidth) {
+         shiftLeft += contentsWidth;
+		 }
+   target.css({'left':shiftLeft + 'px'});
+   };
+
+   setup();
+   setInterval(update,time);
+   return self;
+};
